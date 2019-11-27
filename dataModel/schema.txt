@@ -1,0 +1,38 @@
+create table person (
+    id int(10)  PRIMARY KEY AUTO_INCREMENT, 
+    user_name varchar(256) not null, 
+    name varchar(256) not null,
+    email varchar(256),
+    phone varchar(256) not null,
+    password varchar(256) not null,
+    address varchar(256),
+    status int(10) not null,
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+); 
+
+create table single_package (
+    id int(10)  PRIMARY KEY AUTO_INCREMENT, 
+    category varchar(256) not null,
+    package_type varchar(256) not null, 
+    package_name varchar(256) not null, 
+    vendor_username varchar(256) not null,
+    price int(255) not null,
+    transport_cost int(255),
+    available_status varchar(256) not null,
+    image varchar(256),
+    rating varchar(256)
+);
+
+create table booking (
+    id int(10)  PRIMARY KEY AUTO_INCREMENT,  
+    username varchar(256) not null, 
+    transaction varchar(256) not null,
+    email varchar(256), phone varchar(256) not null, 
+    address varchar(256),
+    bookingdate date, 
+    vendorname varchar(256),
+    packagename varchar(256), 
+    totalcost int(255), 
+    halfpaid varchar(256), 
+    fullpaid varchar(256)
+);
